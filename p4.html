@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PALINDROME CHECKER</title>
+</head>
+<body>
+    <h1> Palindrome Checker </h1>
+    <input type="text" placeholder=" palindrome checker" id="inp">
+    <button onclick="check()"> checker </button>
+    <h2 id="htwo"> palindrome or not </h2>
+
+    <script> 
+        let htwo = document.getElementById("htwo");
+        let inp = document.getElementById("inp");
+        function reverseString(str){
+            return str.split("").reverse().join("")
+        } 
+
+        function check(){
+            let value = inp.value;
+            let reverse = reverseString(value)
+            if(value === reverse){
+                console.log("its a palindrome")
+                htwo.textContent = " Its a Palindrome"
+
+            }
+            else{
+                console.log("not a palindrome")
+                htwo.textContent = " Not a Palindrome"
+            }
+             inp.value=""
+        }
+        inp.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                check(); 
+            }
+        });
+       
+
+        
+    </script>
+    
+</body>
+</html>
